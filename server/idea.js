@@ -1,6 +1,7 @@
 const express = require('express');
 const db = require('./db');
 const bodyParser = require('body-parser');
+const checkMillionDollarIdea = require('./checkMillionDollarIdea');
 
 const ideaRouter = express.Router();
 ideaRouter.use(bodyParser.json());
@@ -26,7 +27,7 @@ ideaRouter.get('/:ideaId', (req, res, next) => {
     res.send(ideas[req.ideaIndex]);
 });
 
-ideaRouter.post('/', (req, res, next) => {
+ideaRouter.post('/', checkMillionDollarIdea, (req, res, next) => {
     const receivedIdea = req.body;
     if (receivedIdea) {
         db.addToDatabase('ideas', receivedIdea);
