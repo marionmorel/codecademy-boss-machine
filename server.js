@@ -8,7 +8,7 @@ module.exports = app;
 /* Do not change the following line! It is required for testing and allowing
 *  the frontend application to interact as planned with the api server
 */
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4002;
 
 // Add middleware for handling CORS requests from index.html
 app.use(cors());
