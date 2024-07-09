@@ -47,3 +47,4 @@ ideaRouter.delete('/:ideaId', (req, res, next) => {
     res.status(204).send();
 });
 
+module.exports = ideaRouter;
